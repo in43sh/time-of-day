@@ -1,10 +1,11 @@
 .body {
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.test {
-    font-size: 10rem;
+.time {
+    font-size: 2rem;
 }
