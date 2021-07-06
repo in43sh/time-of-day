@@ -34,10 +34,10 @@ function showCustomMessage(timeOfDay) {
 
 function showImage() {
     images = [
+        "./images/night.jpeg",
         "./images/morning.jpeg",
         "./images/afternoon.jpeg",
-        "./images/evening.jpeg",
-        "./images/night.jpeg"
+        "./images/evening.jpeg"
     ]
     let imageOfThisTime = images[getTimeOfDay()];
     console.log("imageOfThisTime => ", imageOfThisTime);
@@ -76,15 +76,6 @@ function getTimeOfDay() {
     let timeOfDay = '';
     console.log(hours);
     switch (hours) {
-        case '23':
-        case '24':
-        case '1':
-        case '2':
-        case '3':
-        case '4':
-            timeOfDay = 0;
-            console.log('night');
-            break;
         case '5':
         case '6':
         case '7':
@@ -112,6 +103,15 @@ function getTimeOfDay() {
             timeOfDay = 3;
             console.log('evening');
             break;
+        case '23':
+            case '24':
+            case '1':
+            case '2':
+            case '3':
+            case '4':
+                timeOfDay = 0;
+                console.log('night');
+                break;
     }
     console.log(hours);
     return timeOfDay
