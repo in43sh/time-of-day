@@ -1,12 +1,15 @@
 let days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 let timeOfDay = ['night', 'morning', 'afternoon', 'evening'];
 
+console.log(document.getElementById("body").style.backgroundImage);
+document.getElementById("body").style.backgroundImage = "url(" + showImage() + ")";
+console.log(document.getElementById("body").style.backgroundImage);
 document.getElementById("show_time").innerHTML = showTime();
 document.getElementById("show_day_of_the_week").innerHTML = showDayOfTheWeek(days)
 document.getElementById("show_year").innerHTML = showCopyright();
 document.getElementById("show_custom_message").innerHTML = showCustomMessage(timeOfDay);
 document.getElementById("show_custom_message").style.color = getColor();
-document.getElementById("show_image").src = showImage();
+// document.getElementById("show_image").src = showImage();
 
 function showTime() {
     let d = new Date(),
@@ -37,6 +40,7 @@ function showImage() {
         "./images/night.jpeg"
     ]
     let imageOfThisTime = images[getTimeOfDay()];
+    console.log("imageOfThisTime => ", imageOfThisTime);
     return imageOfThisTime
 }
 
@@ -54,13 +58,13 @@ function getColor() {
     console.log(timeOfDay);
     switch (timeOfDay) {
         case 0:
-            return 'yellow';
+            return 'black';
         case 1:
-            return 'red';
+            return 'yellow';
         case 2:
-            return 'blue';
+            return 'red';
         case 3:
-            return 'gray';
+            return 'blue';
     }
 }
 
