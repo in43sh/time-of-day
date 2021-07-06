@@ -1,7 +1,7 @@
 # time-of-day
 
 ## Background:
-In this assignment, you'll work with the JavaScript [Date object] (https://www.w3schools.com/jsref/jsref_obj_date.asp) to integrate information from the client's system clock into a web page.  Consider adding data to the page using document.getElementById() for example to place your data on the page.
+In this assignment, you'll work with the JavaScript [Date object](https://www.w3schools.com/jsref/jsref_obj_date.asp) to integrate information from the client's system clock into a web page.  Consider adding data to the page using document.getElementById() for example to place your data on the page.
 
 ## Deliverable:
 Create a web page that uses JavaScript to determine the current hour, and presents a different image, custom message, and color based on each of the following times of day:
