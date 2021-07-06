@@ -1,8 +1,12 @@
+let days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+let timeOfDay = ['night', 'morning', 'afternoon', 'evening'];
+
 document.getElementById("show_time").innerHTML = showTime();
-document.getElementById("show_day_of_the_week").innerHTML = showDayOfTheWeek()
+document.getElementById("show_day_of_the_week").innerHTML = showDayOfTheWeek(days)
 document.getElementById("show_year").innerHTML = showCopyright();
 document.getElementById("show_custom_message").innerHTML = showCustomMessage();
 document.getElementById("show_custom_message").style.color = getColor();
+document.getElementById("show_image").src = showImage();
 
 function showTime() {
     let d = new Date(),
@@ -13,14 +17,27 @@ function showTime() {
     return hours+':'+minutes+ampm;
 }
 
-function showDayOfTheWeek() {
-    let d = new Date(),
-    days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+function showDayOfTheWeek(days) {
+    let d = new Date()
+    console.log('====>');
+    // console.log(days[0]);
+    console.log('=>', days);
     return days[d.getDay()];
 }
 
-function showCustomMessage() {
-    return 'Good ' + getTimeOfDay()
+function showCustomMessage(days) {
+    return 'Good ' + days[getTimeOfDay()]
+}
+
+function showImage() {
+    images = [
+        "./images/morning.jpeg",
+        "./images/afternoon.jpeg",
+        "./images/evening.jpeg",
+        "./images/night.jpeg"
+    ]
+    let imageOfThisTime = images[getTimeOfDay()];
+    return imageOfThisTime
 }
 
 // let showCustomMessage = () => {
@@ -33,16 +50,16 @@ function showCustomMessage() {
 
 function getColor() {
     let timeOfDay = getTimeOfDay();
-    alert(timeOfDay)
+    // alert(timeOfDay)
     console.log(timeOfDay);
     switch (timeOfDay) {
-        case 'night':
+        case 0:
             return 'yellow';
-        case 'morning':
+        case 1:
             return 'red';
-        case 'afternoon':
+        case 2:
             return 'blue';
-        case 'evening':
+        case 3:
             return 'gray';
     }
 }
@@ -61,7 +78,7 @@ function getTimeOfDay() {
         case '2':
         case '3':
         case '4':
-            timeOfDay = 'night';
+            timeOfDay = 0;
             console.log('night');
             break;
         case '5':
@@ -71,7 +88,7 @@ function getTimeOfDay() {
         case '9':
         case '10':
         case '11':
-            timeOfDay = ('morning');
+            timeOfDay = 1;
             console.log('morning');
             break;
         case '12':
@@ -80,7 +97,7 @@ function getTimeOfDay() {
         case '15':
         case '16':
         case '17':
-            timeOfDay.log('afternoon');
+            timeOfDay = 2;
             console.log('afternoon');
             break;
         case '18':
@@ -88,7 +105,7 @@ function getTimeOfDay() {
         case '20':
         case '21':
         case '22':
-            timeOfDay.log('evening');
+            timeOfDay = 3;
             console.log('evening');
             break;
     }

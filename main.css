@@ -9,3 +9,8 @@
 .time {
     font-size: 2rem;
 }
+
+.image {
+    width: 500px;
+    height: auto;
+}
