@@ -1,8 +1,10 @@
-document.getElementById("show_time").innerHTML = formatAMPM();
+document.getElementById("show_time").innerHTML = showTime();
+document.getElementById("show_day_of_the_week").innerHTML = showDayOfTheWeek()
 document.getElementById("show_year").innerHTML = showCopyright();
 document.getElementById("show_custom_message").innerHTML = showCustomMessage();
+document.getElementById("show_custom_message").style.color = getColor();
 
-function formatAMPM() {
+function showTime() {
     let d = new Date(),
     minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
     hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
@@ -13,6 +15,12 @@ function formatAMPM() {
     return days[d.getDay()]+' '+hours+':'+minutes+ampm;
 }
 
+function showDayOfTheWeek() {
+    let d = new Date(),
+    days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    return days[d.getDay()];
+}
+
 function showCustomMessage() {
     return 'Good ' + getTimeOfDay()
 }
@@ -21,6 +29,27 @@ function showCustomMessage() {
 //     getTimeOfDay()
 // }
 
+// function setTextColor() {
+//     document.getElementById("show_custom_message").style.color = getColor();
+// }
+
+function getColor() {
+    let timeOfDay = getTimeOfDay();
+    alert(timeOfDay)
+    console.log(timeOfDay);
+    switch (timeOfDay) {
+        case 'night':
+            return 'yellow';
+        case 'morning':
+            return 'red';
+        case 'afternoon':
+            return 'blue';
+        case 'evening':
+            return 'gray';
+    }
+}
+
+// shows if it morning, afternoon, evening or night
 function getTimeOfDay() {
     let d = new Date()
     let hours = d.getHours().toString()
@@ -44,8 +73,8 @@ function getTimeOfDay() {
         case '9':
         case '10':
         case '11':
-            timeOfDay.log('morning');
-            console.log('morning.');
+            timeOfDay = ('morning');
+            console.log('morning');
             break;
         case '12':
         case '13':
@@ -54,7 +83,7 @@ function getTimeOfDay() {
         case '16':
         case '17':
             timeOfDay.log('afternoon');
-            console.log('afternoon.');
+            console.log('afternoon');
             break;
         case '18':
         case '19':
@@ -62,7 +91,7 @@ function getTimeOfDay() {
         case '21':
         case '22':
             timeOfDay.log('evening');
-            console.log('evening.');
+            console.log('evening');
             break;
     }
     console.log(hours);
