@@ -4,17 +4,17 @@ let timeOfDay = ['night', 'morning', 'afternoon', 'evening'];
 document.getElementById("show_time").innerHTML = showTime();
 document.getElementById("show_day_of_the_week").innerHTML = showDayOfTheWeek(days)
 document.getElementById("show_year").innerHTML = showCopyright();
-document.getElementById("show_custom_message").innerHTML = showCustomMessage();
+document.getElementById("show_custom_message").innerHTML = showCustomMessage(timeOfDay);
 document.getElementById("show_custom_message").style.color = getColor();
 document.getElementById("show_image").src = showImage();
 
 function showTime() {
     let d = new Date(),
-    minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-    hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+    minutes = d.getMinutes().toString().length == 1 ? '0' + d.getMinutes() : d.getMinutes(),
+    hours = d.getHours().toString().length == 1 ? '0' + d.getHours() : d.getHours(),
     ampm = d.getHours() >= 12 ? 'pm' : 'am';
     // return days[d.getDay()]+' '+months[d.getMonth()]+' '+d.getDate()+' '+d.getFullYear()+' '+hours+':'+minutes+ampm;
-    return hours+':'+minutes+ampm;
+    return hours + ':' + minutes + ampm;
 }
 
 function showDayOfTheWeek(days) {
@@ -25,8 +25,8 @@ function showDayOfTheWeek(days) {
     return days[d.getDay()];
 }
 
-function showCustomMessage(days) {
-    return 'Good ' + days[getTimeOfDay()]
+function showCustomMessage(timeOfDay) {
+    return 'Good ' + timeOfDay[getTimeOfDay()];
 }
 
 function showImage() {
@@ -116,7 +116,7 @@ function getTimeOfDay() {
 function showCopyright() {
     let d = new Date(),
     year = d.getFullYear()
-    return year;
+    return '© 2015-' + year;
 }
 
 // function getDayOfWeek() {

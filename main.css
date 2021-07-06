@@ -6,6 +6,11 @@
     align-items: center;
 }
 
+.footer {
+    position: fixed;
+    bottom: 15px;
+}
+
 .time {
     font-size: 2rem;
 }
