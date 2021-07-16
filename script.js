@@ -34,10 +34,10 @@ function showCustomMessage(timeOfDay) {
 
 function showImage() {
     images = [
-        "./images/night.jpeg",
-        "./images/morning.jpeg",
-        "./images/afternoon.jpeg",
-        "./images/evening.jpeg"
+        "https://i.ibb.co/BcnYyjR/night.jpg",
+        "https://i.ibb.co/55DLJ6m/morning.jpg",
+        "https://i.ibb.co/CBcWqCj/afternoon.jpg",
+        "https://i.ibb.co/BcnYyjR/night.jpg"
     ]
     let imageOfThisTime = images[getTimeOfDay()];
     console.log("imageOfThisTime => ", imageOfThisTime);
