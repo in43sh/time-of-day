@@ -1,5 +1,9 @@
 # time-of-day
 
+## Link
+
+[time-of-day.netlify.app](https://time-of-day.netlify.app/)
+
 ## Background
 
 In this assignment, you'll work with the JavaScript [Date object](https://www.w3schools.com/jsref/jsref_obj_date.asp) to integrate information from the client's system clock into a web page.  Consider adding data to the page using document.getElementById() for example to place your data on the page.
